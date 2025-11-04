@@ -179,11 +179,11 @@ footer {
   width: 2px;       /* толщина полоски */
   height: 100%;
   background: #fff;
-  margin:10%
 }
 
 .footer-qr a {
   display: flex;
+  margin:10%;
   align-items: center;
 }
 
