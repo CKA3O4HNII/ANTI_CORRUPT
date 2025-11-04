@@ -60,3 +60,18 @@ function displayPoems() {
 
 displayPoems();
 setInterval(displayPoems, 30000);
+// Блокируем только колесо мыши (на ПК)
+function blockMouseWheel(e) {
+  // Проверяем: если это НЕ сенсорное устройство (нет touch)
+  if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
+    e.preventDefault();
+  }
+}
+
+// Применяем только на ПК
+document.addEventListener('wheel', blockMouseWheel, { passive: false });
+
+// Отключаем для touch-устройств
+document.addEventListener('touchmove', function(e) {
+  // Ничего не блокируем — скролл работает
+}, { passive: true });
