@@ -125,3 +125,55 @@ footer {
   .title { font-size: 2rem; }
   .poem pre { font-size: 1rem; }
 }
+.qr-container {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 5;
+}
+
+.qr-container:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.qr-code {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+/* Базовые стили — прокрутка отключена на всех */
+body {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  /* твои стили */
+}
+
+/* Только на мобильных (ширина ≤ 768px) — включаем прокрутку */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;     /* ← разрешаем вертикальный скролл */
+    overflow-x: hidden;
+    position: static;     /* ← убираем fixed, чтобы скролл работал */
+    height: auto;         /* ← важно! */
+    min-height: 100vh;
+  }
+
+  /* Убираем фиксированное позиционирование фона */
+  #background {
+    position: relative;
+    z-index: -1;
+  }
+
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
