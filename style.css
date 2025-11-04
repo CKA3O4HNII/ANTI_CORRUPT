@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -15,9 +11,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  position: fixed;  /* Блокируем скролл на ПК */
-  width: 100%;
-  touch-action: none;  /* Блокируем touch на ПК (на всякий) */
 }
 
 header {
@@ -42,7 +35,6 @@ header {
   transition: all 0.3s ease;
   font-weight: 600;
 }
-
 .btn:hover {
   background: #FFD700;
   color: #203a43;
@@ -133,7 +125,6 @@ footer {
   .title { font-size: 2rem; }
   .poem pre { font-size: 1rem; }
 }
-
 .qr-container {
   position: fixed;
   bottom: 15px;
@@ -153,44 +144,4 @@ footer {
   height: 90px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-/* === МОБИЛЬНАЯ ПРОКРУТКА: Включаем скролл ТОЛЬКО на телефонах + сохраняем градиент === */
-@media (max-width: 768px) {
-  body {
-    overflow-y: auto;      /* Разрешаем вертикальный скролл */
-    overflow-x: hidden;    /* Блокируем горизонтальный */
-    position: static;      /* Убираем fixed для скролла */
-    height: auto;          /* Авто-высота для длинного контента */
-    min-height: 100vh;
-    touch-action: pan-y;   /* Разрешаем только вертикальный свайп */
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);  /* ← ВОТ ЭТО СПАСЁТ ГРАДИЕНТ! */
-    transition: background 2s ease;  /* Анимация градиента остаётся */
-  }
-
-  #background {
-    position: relative;    /* Фон адаптируется к скроллу */
-    z-index: -1;
-  }
-
-  .bg-img {
-    position: fixed;       /* Фоны "приклеены" к viewport */
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-
-  #poems-container {
-    min-height: 120vh;     /* Делаем контент длинным для скролла */
-    width: 90%;
-    margin: 10vh auto 20vh;
-    padding: 15px;
-  }
-
-  /* QR на мобильных — не мешает скроллу */
-  .qr-container {
-    position: sticky;
-    bottom: 10px;
-    right: 10px;
-  }
 }
