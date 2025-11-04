@@ -127,7 +127,7 @@ footer {
 }
 .qr-container {
   text-align: center;
-  position: fixed;
+  position: static;
   bottom: 15px;
   right: 20px;
   opacity: 1;
@@ -141,8 +141,14 @@ footer {
 }
 
 .qr-code {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+@media (max-width: 600px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
 }
