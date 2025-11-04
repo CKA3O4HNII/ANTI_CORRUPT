@@ -141,11 +141,51 @@ footer {
 }
 
 .qr-code {
-  width: 120px;
-  height: 120px;
+  width: 50px;
+  height: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* центрируем по горизонтали */
+  gap: 15px; /* расстояние между текстом и QR-кодом */
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  padding-right: 20px; /* место под полоску */
+}
+
+.divider {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;       /* толщина полоски */
+  height: 100%;
+  background: #fff;
+}
+
+.footer-qr a {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 600px) {
   body {
     height: auto;
